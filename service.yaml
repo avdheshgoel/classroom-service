@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: classroom-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: us-central1-docker.pkg.dev/named-inn-450611-t5/k8s-demo-app/classroom-service:01
+          ports:
+            - name: http1
+              containerPort: 8080
