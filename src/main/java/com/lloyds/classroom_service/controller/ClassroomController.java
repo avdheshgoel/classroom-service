@@ -1,5 +1,6 @@
 package com.lloyds.classroom_service.controller;
 
+import com.lloyds.classroom_service.dto.ClassroomFindByIdsRequestDto;
 import com.lloyds.classroom_service.exception.ClassroomNotFoundException;
 import com.lloyds.classroom_service.model.Classroom;
 import com.lloyds.classroom_service.service.ClassroomService;
@@ -15,20 +16,34 @@ public class ClassroomController {
 
     @Autowired
     ClassroomService classroomService;
-    @GetMapping ("/classrooms")
-    public List<Classroom> getAllClassrooms()
-    {
+
+    @GetMapping(value = "/classrooms")
+    public List<Classroom> getAllClassroom() {
         return classroomService.getAllClassrooms();
     }
 
-    @GetMapping("/classroom/{id}")
-    public ResponseEntity<Classroom> getClassroom(@PathVariable("id") int id) throws ClassroomNotFoundException {
-        return new ResponseEntity<>(classroomService.getClassroomById(id), HttpStatus.OK);
+    @GetMapping(value = "/classroom/{id}")
+    public Classroom getClassroom(@PathVariable("id") int id) throws ClassroomNotFoundException {
+        return classroomService.getClassroomById(id);
     }
 
-    @PostMapping("/classroom")
-    private ResponseEntity<Classroom> saveClassroom(@RequestBody Classroom classroom) {
-        return new ResponseEntity<>(classroomService.save(classroom), HttpStatus.OK);
+    @DeleteMapping(value = "/classroom/{id}")
+    public int deleteClassroom(@PathVariable("id") int id) {
+        return classroomService.delete(id);
     }
 
+    @PostMapping(value = "/classroom")
+    public Classroom saveClassroom(@RequestBody Classroom classroom) {
+        return classroomService.save(classroom);
+    }
+
+    @PostMapping(value = "/classroom/find-by-ids")
+    public List<Classroom> getAllClassroomByIds(@RequestBody ClassroomFindByIdsRequestDto requestDto) {
+        return classroomService.getClassroomByIds(requestDto);
+    }
+
+    @PutMapping(value = "/classroom/{id}")
+    public Classroom updateClassroom(@RequestBody Classroom classroom, @PathVariable("id") Integer id) throws ClassroomNotFoundException {
+        return classroomService.update(classroom, id);
+    }
 }

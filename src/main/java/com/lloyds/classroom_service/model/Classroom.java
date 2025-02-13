@@ -21,6 +21,17 @@ public class Classroom {
     @Column
     private Integer code;
 
+    @Column
+    private Integer teacherId;
+
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+
     public int getId() {
         return id;
     }
