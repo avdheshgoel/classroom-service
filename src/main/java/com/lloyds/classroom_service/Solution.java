@@ -2,28 +2,42 @@ package com.lloyds.classroom_service;
 
 import java.util.*;
 import java. lang.*;
-import java.io.*;
 
-public class Solution
-{
-	public static int calculateDesktopProductIDs(char[] productID) {
-		int answer = 0;
+public class Solution {
 
-		return answer;
-	}
-
-	public static void main(String[] args) {
-		Scanner in = new Scanner (System. in);
-		// input for productID
-		int productID_size = in.nextInt();
-		char productID[] = new char[productID_size]:
-		for(int idx = 0; idx < productID_size; idx++) {
-			productID [idx] = in.next(). charAt(8);
-			int result = calculateDesktopProductIDs (productID) ;
-			System.out.print(result);
+		public static int countOfElement(int[] listInputl, int[] listInput2) {
+			int answer = 0;
+			// Write your code here
+			return answer;
 		}
 
-	}
+		public static void main(String[] args) {
+			Scanner in = new Scanner(System.in);
+			int listInput1_size = in.nextInt();
+			int listInput1[] = new int[listInput1_size];
+			for(int idx = 0; idx < listInput1_size; idx++) {
+				listInput1[idx] = in.nextInt();
+			}
+			// input for listInput2
+			int listInput2_size = in.nextInt();
+			int listInput2[] = new int [listInput2_size];
+			for(int idx = 0; idx < listInput2_size; idx++) {
+				listInput2[idx] = in.nextInt();
+			}
+			int result = countOfElement(listInput1, listInput2);
+			System.out.print(result);
 
+		}
 }
+
+
+
+
+
+
+
+
+
+
+		{
 
