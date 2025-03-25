@@ -2,11 +2,9 @@ package com.lloyds.classroom_service.controller;
 
 import com.lloyds.classroom_service.dto.ClassroomFindByIdsRequestDto;
 import com.lloyds.classroom_service.exception.ClassroomNotFoundException;
-import com.lloyds.classroom_service.model.Classroom;
+import com.lloyds.classroom_service.client.model.Classroom;
 import com.lloyds.classroom_service.service.ClassroomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

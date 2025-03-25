@@ -1,4 +1,4 @@
-package com.lloyds.classroom_service.model;
+package com.lloyds.classroom_service.client.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

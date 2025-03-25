@@ -2,8 +2,7 @@ package com.lloyds.classroom_service.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lloyds.classroom_service.dto.ClassroomFindByIdsRequestDto;
-import com.lloyds.classroom_service.exception.ClassroomNotFoundException;
-import com.lloyds.classroom_service.model.Classroom;
+import com.lloyds.classroom_service.client.model.Classroom;
 import com.lloyds.classroom_service.service.ClassroomService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
-import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;

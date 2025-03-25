@@ -3,7 +3,7 @@ package com.lloyds.classroom_service.service;
 import com.lloyds.classroom_service.converter.ClassroomConverter;
 import com.lloyds.classroom_service.dto.ClassroomFindByIdsRequestDto;
 import com.lloyds.classroom_service.exception.ClassroomNotFoundException;
-import com.lloyds.classroom_service.model.Classroom;
+import com.lloyds.classroom_service.client.model.Classroom;
 import com.lloyds.classroom_service.repository.ClassroomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

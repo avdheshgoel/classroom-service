@@ -1,6 +1,6 @@
 package com.lloyds.classroom_service.converter;
 
-import com.lloyds.classroom_service.model.Classroom;
+import com.lloyds.classroom_service.client.model.Classroom;
 import org.springframework.stereotype.Component;
 
 @Component
