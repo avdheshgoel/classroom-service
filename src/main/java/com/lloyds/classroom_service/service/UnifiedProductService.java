@@ -8,11 +8,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UnifiedProductService {
 
-    public static Set<UnifiedProduct> unifyProducts (Set<Product> products, Set<ProductPrice> prices) {
+    public static Set<UnifiedProduct> unifyProducts (Set<Product> products, Set<ProductPrice> prices, String productType) {
 
         Set<UnifiedProduct> unifiedProducts = new HashSet<>();
 
@@ -35,6 +36,11 @@ public class UnifiedProductService {
 
                 unifiedProducts.add(unifiedProduct);
             }
+        }
+
+        if (productType != null && !productType.isEmpty()) {
+            unifiedProducts = unifiedProducts.stream()
+                    .filter(product -> product.productType().equalsIgnoreCase(productType)).collect(Collectors.toSet());
         }
         return unifiedProducts;
     }

@@ -36,12 +36,7 @@ public class ProductController
             if(productPrices == null || products == null) {
                 return ResponseEntity.status(500).build();
             }
-            Set<UnifiedProduct> unifiedProducts = unifiedProductService.unifyProducts(products, productPrices);
-
-            if (productType != null && !productType.isEmpty()) {
-                unifiedProducts = unifiedProducts.stream()
-                        .filter(product -> product.productType().equalsIgnoreCase(productType)).collect(Collectors.toSet());
-            }
+            Set<UnifiedProduct> unifiedProducts = unifiedProductService.unifyProducts(products, productPrices, productType);
 
             return ResponseEntity.ok(unifiedProducts);
         } catch (Exception e) {
